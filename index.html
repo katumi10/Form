@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>gmailcontactform</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="containe">
+            <form onsubmit="sendEmail();reset();return false;">
+                <h3>GET IN TOUCH</h3>
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Email Id" required>
+                <input type="text" id="phone" placeholder="Phone no." required>
+                <textarea id="message" rows="4" placeholder="How can we help you"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <script>
+            function sendEmail(){
+                Email.send({
+                          Host : "smtp.gmail.com",
+                         Username : "umikat18@gmail.com",
+                         Password : "0555784461katumi",
+                         To : 'katumiamadu25@gmail.com',
+                         From : document.getElementById("email").value,
+                         Subject : "New Contact Form Enquiry",
+                         Body : "And this is the body"
+}).then(
+  message => alert(message)
+);
+            }
+        </script>
+    </body>
+</html>  
